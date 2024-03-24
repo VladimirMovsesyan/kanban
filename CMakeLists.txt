@@ -24,4 +24,9 @@ set(${project}_SOURCE_LIST
 add_executable(${project}
         ${${project}_SOURCE_LIST})
 
+add_subdirectory(task)
+add_subdirectory(column)
+
 target_link_libraries(${project} ${SFML_LIBRARIES})
+target_link_libraries(${project} task)
+target_link_libraries(${project} column)
