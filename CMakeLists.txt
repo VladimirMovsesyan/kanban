@@ -21,12 +21,18 @@ include_directories(${SFML_INCLUDE_DIRS})
 set(${project}_SOURCE_LIST
         ${${project}_SOURCES})
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/resources/arial.ttf
+        ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
+
 add_executable(${project}
         ${${project}_SOURCE_LIST})
 
+
 add_subdirectory(task)
 add_subdirectory(column)
+add_subdirectory(drawer)
 
 target_link_libraries(${project} ${SFML_LIBRARIES})
 target_link_libraries(${project} task)
 target_link_libraries(${project} column)
+target_link_libraries(${project} drawer)
