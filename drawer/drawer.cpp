@@ -2,28 +2,27 @@
 
 
 int Drawer::draw() {
-    int line_thickness = 5.f;
+
     int table_width = width / count_of_tables;
 
-    if (table_width < 200) {
+    if (table_width < minColumnWidth) {
         return 1;
     }
 
-    if (!font.loadFromFile("arial.ttf"))
-    {
+    if (!font.loadFromFile("arial.ttf")) {
         return 2;
     }
 
     sf::RenderWindow window(sf::VideoMode(width, height), "Main screen");
 
     sf::RectangleShape line_bar(sf::Vector2f(width, line_thickness));
-    line_bar.setPosition(0, 90);
+    line_bar.setPosition(0, toolbar_height);
 
     sf::Text programName;
     programName.setFont(font);
     programName.setString("KANBAN");
-    programName.setCharacterSize(50);
-    programName.setPosition(width / 2 - 105, 0);
+    programName.setCharacterSize(characterSize);
+    programName.setPosition(width / 2 - shift, 0);
 
     sf::RectangleShape* lines_of_tables = new sf::RectangleShape[count_of_tables - 1];
     for (int i = 0; i < count_of_tables - 1; ++i) {
