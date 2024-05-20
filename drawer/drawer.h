@@ -13,13 +13,15 @@ const int height = 1000.f;
 class Drawer {
 private:
     sf::Font font;
-    int count_of_tables = 5;
-    int toolbar_height = 90.f;
+    int columnNumber = 3;
+    int scroll_pointer = 0;
+    float toolbarHeight = 90.f;
 
 public:
     int draw(std::vector<Column>&columns);
     void draw_tasks(sf::RenderWindow& window, std::vector<Column>&columns);
     Task add_task(int&);
+    void edit_task(Task &task, int &col);
 };
 
 #endif //KANBAN_DRAWER_H

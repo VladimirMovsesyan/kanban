@@ -42,3 +42,7 @@ void Column::SetTasks(std::vector<Task> tasks) {
 std::vector<Task> Column::GetTasks() {
     return this->tasks;
 }
+
+void Column::AddTask(Task &task) {
+    this->tasks.push_back(task);
+}
