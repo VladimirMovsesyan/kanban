@@ -20,9 +20,9 @@ public:
     void SetColor(int, int, int);
     void SetColor(int);
     int GetColor() const;
-
     void SetTasks(std::vector<Task>);
     std::vector<Task> GetTasks();
+    void AddTask(Task &task);
 };
 
 #endif//KANBAN_COLUMN_H

@@ -10,14 +10,14 @@ private:
 
 public:
     Task();
-    Task(std::string &, std::string &);
+    Task(const std::string &, const std::string &);
 
     ~Task() = default;
 
     void SetTitle(const std::string &);
-    std::string GetTitle();
+    std::string GetTitle() const;
     void SetDescription(const std::string &);
-    std::string GetDescription();
+    std::string GetDescription() const;
 };
 
 #endif//KANBAN_TASK_H
